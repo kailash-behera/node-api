@@ -37,6 +37,6 @@ app.use((req, res) => {
     });
 });
 
-const parseIp = (req) => req.headers['x-forwarded-for']?.split(',').shift() || req.socket?.remoteAddress
+const parseIp = (req) => req.headers['x-forwarded-for'] || req.socket?.remoteAddress
 
 app.listen(process.env.PORT || 8000, () => console.log(`SERVER LISTENING ON http://localhost:${process.env.PORT || 8000}`));
