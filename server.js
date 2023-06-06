@@ -21,7 +21,9 @@ app.get('/api/me', (req, res) => {
             version: req.useragent.version,
             isMobile: req.useragent.isMobile,
             isDesktop: req.useragent.isDesktop,
-            geoIp: req.useragent.geoIp
+            geoIp: req.useragent.geoIp,
+            reqIp: req.socket.remoteAddress,
+            xIp: req.headers,
         }
     });
 });
